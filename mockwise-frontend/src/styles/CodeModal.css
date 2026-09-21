@@ -1,0 +1,22 @@
+.custom-code-modal {
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 2px!important;
+    border: 1px solid #FFFFFF;
+  }
+  
+  .custom-code-modal .modal-header {
+    background-color: #000000;
+    justify-content: center;
+    border-bottom: 1px solid #FFFFFF;
+  }
+  
+  .custom-code-modal .modal-title {
+    text-align: center;
+    flex: 1;
+    color: white;
+  }
+  
+  .custom-code-modal .btn-close {
+    filter: invert(1); /* makes X white */
+  }

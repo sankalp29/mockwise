@@ -1,0 +1,261 @@
+/* Frameless section shell — no outer bounding box; cards/table provide surfaces */
+.interview-history-section,
+.dashboard-section {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+}
+
+/* Table needs its own surface once the outer panel is gone */
+.interview-history-table-shell {
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  overflow: hidden;
+  padding: 0.25rem;
+}
+
+.interview-history-section h3 {
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.interview-history-section h3 i,
+.interview-history-section h1 i {
+  color: #198754;
+}
+
+/* Refresh Button */
+.refresh-btn {
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.refresh-btn:hover {
+  background: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+.refresh-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Table Styling */
+.interview-history-table {
+  background: transparent;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+.interview-history-table thead th {
+  background: #2a2a2a;
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 1rem 0.75rem;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+/* Header alignment to match data columns */
+.interview-history-table thead th:nth-child(1) {
+  text-align: left; /* Interview Date */
+}
+
+.interview-history-table thead th:nth-child(2) {
+  text-align: center; /* Difficulty */
+}
+
+.interview-history-table thead th:nth-child(3) {
+  text-align: center; /* Questions */
+}
+
+.interview-history-table thead th:nth-child(4) {
+  text-align: center; /* Rating */
+}
+
+.interview-history-table thead th:nth-child(5) {
+  text-align: center; /* Actions */
+}
+
+.interview-history-table tbody tr {
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.interview-history-table tbody tr:hover {
+  background-color: #333 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.interview-history-table tbody td {
+  border: none;
+  padding: 1rem 0.75rem;
+  vertical-align: middle;
+  color: #ffffff;
+}
+
+/* Column-specific styling */
+.interview-date {
+  font-weight: 500;
+  color: #e0e0e0;
+  text-align: left;
+}
+
+.interview-difficulty {
+  text-align: center;
+}
+
+.difficulty-badge {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.difficulty-easy {
+  /* background: linear-gradient(135deg, #28a745, #20c997); */
+  background: #198754; 
+  color: white;
+}
+
+.difficulty-medium {
+  /* background: linear-gradient(135deg, #ffc107, #fd7e14); */
+  background: #FFC107;
+  color: #000;
+}
+
+.difficulty-hard {
+  /* background: linear-gradient(135deg, #dc3545, #e83e8c); */
+  background: #DC3545;
+  color: white;
+}
+
+.interview-questions {
+  text-align: center;
+  font-weight: 600;
+  color: #e0e0e0;
+}
+
+.interview-rating {
+  text-align: center;
+}
+
+.rating-value {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.interview-actions {
+  text-align: center;
+}
+
+/* View Feedback Button */
+.view-feedback-btn {
+  background: #198754;
+  border: 2px solid #198754;
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.view-feedback-btn:hover {
+  background: #157347;
+  border-color: #157347;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(25, 135, 84, 0.3);
+}
+
+.view-feedback-btn:focus {
+  box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.25);
+}
+
+.view-feedback-btn i {
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .interview-history-section {
+    padding: 1rem;
+  }
+  
+  .interview-history-table {
+    font-size: 0.9rem;
+  }
+  
+  .interview-history-table thead th,
+  .interview-history-table tbody td {
+    padding: 0.75rem 0.5rem;
+  }
+  
+  .view-feedback-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+  
+  .difficulty-badge {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .interview-history-section h3 {
+    font-size: 1.5rem;
+  }
+  
+  .interview-history-table {
+    font-size: 0.8rem;
+  }
+  
+  .view-feedback-btn {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+  }
+  
+  .view-feedback-btn i {
+    display: none;
+  }
+}
+
+/* Loading and Error States */
+.interview-history-section .spinner-border {
+  color: #198754;
+}
+
+.interview-history-section .alert {
+  background: rgba(220, 53, 69, 0.1);
+  border: 1px solid #dc3545;
+  color: #dc3545;
+}
+
+.interview-history-section .alert .btn {
+  border-color: #dc3545;
+  color: #dc3545;
+}
+
+.interview-history-section .alert .btn:hover {
+  background: #dc3545;
+  color: white;
+}

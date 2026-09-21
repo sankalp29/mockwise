@@ -1,0 +1,167 @@
+/* LeetCode-inspired compile result panel */
+.compile-result-panel {
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 10px;
+  border: 1px solid transparent;
+  font-size: 13px;
+}
+
+.crp-dark {
+  background: #161a22;
+  border-color: #2a3140;
+  color: #e8eaed;
+}
+
+.crp-light {
+  background: #f7f7f8;
+  border-color: #e0e0e0;
+  color: #262626;
+}
+
+.crp-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 12px;
+  border-bottom: 1px solid transparent;
+}
+
+.crp-dark .crp-header {
+  border-bottom-color: #2a3140;
+  background: #1a1f2a;
+}
+
+.crp-light .crp-header {
+  border-bottom-color: #e0e0e0;
+  background: #ffffff;
+}
+
+.crp-tab {
+  font-weight: 600;
+  font-size: 13px;
+  padding: 4px 2px;
+  color: inherit;
+  opacity: 0.7;
+}
+
+.crp-tab-active {
+  opacity: 1;
+  border-bottom: 2px solid #ffa116; /* LeetCode-ish accent */
+}
+
+.crp-close {
+  text-decoration: none !important;
+  color: inherit !important;
+  opacity: 0.55;
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 0 4px !important;
+}
+
+.crp-close:hover {
+  opacity: 1;
+}
+
+.crp-body {
+  padding: 12px 14px 14px;
+  max-height: 220px;
+  overflow: auto;
+}
+
+.crp-status-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.crp-status-label {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.crp-status-summary {
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+.crp-status-icon {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.crp-status-success .crp-status-label,
+.crp-status-success .crp-status-icon {
+  color: #2cbb5d;
+}
+
+.crp-status-error .crp-status-label,
+.crp-status-error .crp-status-icon {
+  color: #ef4743;
+}
+
+.crp-status-failed .crp-status-label,
+.crp-status-failed .crp-status-icon {
+  color: #ffa116;
+}
+
+.crp-status-running .crp-status-label {
+  color: #0a84ff;
+}
+
+.crp-status-idle .crp-status-label {
+  opacity: 0.7;
+}
+
+.crp-console {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 12.5px;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  word-break: break-word;
+  border-radius: 6px;
+  padding: 10px 12px;
+}
+
+.crp-dark .crp-console {
+  background: #0d1017;
+  border: 1px solid #2a3140;
+  color: #f48771;
+}
+
+.crp-light .crp-console {
+  background: #fff5f5;
+  border: 1px solid #ffc9c9;
+  color: #c92a2a;
+}
+
+.crp-console-line {
+  display: block;
+  padding: 3px 0;
+}
+
+.crp-console-line-clickable {
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 3px 4px;
+  margin: 0 -4px;
+}
+
+.crp-console-line-clickable:hover {
+  background: rgba(239, 71, 67, 0.12);
+}
+
+.crp-line-ref {
+  font-weight: 700;
+  margin-right: 8px;
+  color: #4dabf7;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.crp-light .crp-line-ref {
+  color: #1971c2;
+}
+

@@ -1,0 +1,145 @@
+.mockwise-logo {
+  height: 30px;
+  width: auto;
+}
+  
+@keyframes pulse-glow {
+  from { box-shadow: 0 0 15px var(--green-accent); }
+  to { box-shadow: 0 0 30px var(--green-accent), 0 0 50px rgba(33, 194, 127, 0.4); }
+}
+
+.interview-type-card {
+  padding: 15px;
+  margin-bottom: 30px; /* Space between cards */
+}
+
+.interview-type-card .card-content {
+  background-color: var(--card-bg-color);
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  border: 1px solid var(--border-color);
+}
+  
+.interview-type-card .card-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.mockwise-gradient {
+  background: linear-gradient(90deg, #00ffb8, #216eb6);
+  background-clip: text;
+  -webkit-background-clip: text; /* WebKit (Safari, Chrome) */
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Fallback for non-supporting browsers */
+}
+
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+  
+.mockwise-pulse {
+  display: inline-block;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+/* Main container for the entire flow chart */
+.flow-container-v3 {
+  position: relative;
+  max-width: 1300px; /* Increased max-width for more horizontal space */
+  margin: 0 auto;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: flex; /* Added for horizontal layout */
+  justify-content: center; /* Centered for horizontal layout */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  align-items: flex-start; /* Align toasts to the top */
+}
+
+/* Toast styling for horizontal layout */
+.flow-toast {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  margin: 0 1rem 2rem 1rem; /* Add horizontal and bottom margin to separate toasts */
+  flex-basis: 30%; /* Set to 30% for broader toasts within increased container width */
+  min-height: 500px; /* Set a minimum height to ensure consistent dimensions */
+}
+
+.toast {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.flow-toast .toast-header {
+  border-bottom: none !important;
+  font-weight: 600;
+  font-size: 1.3rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.flow-toast .toast-header strong {
+  color: #198754 !important; /* New color for toast headers */
+}
+
+.flow-toast .toast-body {
+  font-size: 1.2rem;
+  padding: 1rem;
+}
+
+.toast-styling {
+  background-color: white !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  border-radius: 1rem !important;
+}
+
+.toast-styling .toast-header {
+  background-color: white !important;
+  border-top-left-radius: 1rem !important;
+  border-top-right-radius: 1rem !important;
+  color: black !important;
+}
+
+.toast-styling .toast-body {
+  color: black !important;
+}
+
+.dotted-circle-number {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  background-color: #198754; /* Filled circle with new color */
+  border-radius: 50%;
+  font-size: 1.9rem;
+  font-weight: bold;
+  margin-right: 8px;
+  color: white !important; /* White number text */
+  border: none !important;
+}
+
+.toast-icon-image {
+  width: 140px;
+  height: 140px;
+  border-radius: var(--bs-border-radius); /* from rounded */
+  margin-right: 0.5rem;
+  margin-top: 1rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.coding-flow-highlight {
+  background: linear-gradient(90deg, #00ffb8, #216eb6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

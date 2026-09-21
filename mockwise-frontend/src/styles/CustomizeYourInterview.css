@@ -1,0 +1,92 @@
+.mb-6 {
+    margin-bottom: 4rem !important;
+}
+
+.mt-6 {
+    margin-top: 4rem !important;
+}
+
+/* Horizontal interview-type selection bar */
+.cyi-type-bar {
+  display: flex;
+  width: 80%;
+  max-width: 960px;
+  margin: 0 auto 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.cyi-type-bar-item {
+  flex: 1 1 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  border: none;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.78);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.85rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.12s ease, color 0.12s ease;
+}
+
+.cyi-type-bar-item:last-child {
+  border-right: none;
+}
+
+/* Unselected hover: green tint, not dark/black */
+.cyi-type-bar-item:hover:not(:disabled):not(.is-selected) {
+  background: rgba(25, 135, 84, 0.28);
+  color: #fff;
+}
+
+.cyi-type-bar-item.is-selected,
+.cyi-type-bar-item.is-selected:hover:not(:disabled) {
+  background: #198754;
+  color: #fff;
+}
+
+.cyi-type-bar-item.is-disabled,
+.cyi-type-bar-item:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.cyi-type-bar-badge {
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  border-radius: 999px;
+  padding: 0.15rem 0.45rem;
+  background: rgba(255, 255, 255, 0.18);
+  color: inherit;
+}
+
+.cyi-type-bar-item.is-selected .cyi-type-bar-badge,
+.cyi-type-bar-item.is-selected:hover .cyi-type-bar-badge {
+  background: rgba(255, 255, 255, 0.22);
+  color: #fff;
+}
+
+@media (max-width: 576px) {
+  .cyi-type-bar {
+    width: 92%;
+    border-radius: 1rem;
+    flex-direction: column;
+  }
+
+  .cyi-type-bar-item {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .cyi-type-bar-item:last-child {
+    border-bottom: none;
+  }
+}

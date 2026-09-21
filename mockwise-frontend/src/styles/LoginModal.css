@@ -1,0 +1,130 @@
+/* Login and Signup Modal Styles */
+.login-signup-modal .modal-content {
+    background-color: #000000;
+    border: 1px solid #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* Close button styling */
+.login-signup-modal .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+    opacity: 1;
+}
+
+.login-signup-modal .btn-close:hover {
+    filter: invert(1) grayscale(100%) brightness(200%);
+    opacity: 0.75;
+}
+
+/* Form controls */
+
+.login-signup-modal .btn-outline-light {
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.3s ease;
+    font-family: 'Roboto', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.25px;
+    font-size: 16px;
+}
+
+.login-signup-modal .btn-outline-light:hover {
+    background-color: #f8f9fa;
+    color: #000000;
+    border-color: #dee2e6;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.login-signup-modal .btn-outline-warning {
+    border: 1px solid #ffc107;
+    color: #ffc107;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+}
+
+.login-signup-modal .btn-outline-warning:hover {
+    background-color: #ffc107;
+    color: #000000;
+    border-color: #ffc107;
+}
+
+/* Link buttons */
+.forgot-password {
+    background: none !important;
+    border: none !important;
+    color: #007bff !important;
+    text-decoration: none !important;
+    padding: 0 !important;
+    font-size: 0.9rem !important;
+    transition: color 0.3s ease !important;
+}
+
+.forgot-password:hover {
+    color: #0056b3 !important;
+    text-decoration: underline !important;
+}
+
+.signup {
+    background: none !important;
+    border: none !important;
+    color: #007bff !important;
+    text-decoration: none !important;
+    padding: 0 !important;
+    margin-left: 0.25rem !important;
+    transition: color 0.3s ease !important;
+}
+
+.signup:hover {
+    color: #0056b3 !important;
+    text-decoration: underline !important;
+}
+
+.signin-link {
+    background: none !important;
+    border: none !important;
+    color: #007bff !important;
+    text-decoration: none !important;
+    padding: 0 !important;
+    margin-left: 0.25rem !important;
+    transition: color 0.3s ease !important;
+}
+
+.signin-link:hover,
+.login-signup-modal .signin-link:hover,
+.login-signup-modal .btn.signin-link:hover {
+    color: #0056b3 !important;
+    text-decoration: underline !important;
+}
+
+/* Remove underline from link buttons */
+.login-signup-modal .btn-link {
+    text-decoration: none !important;
+}
+
+.login-signup-modal .btn-link:hover {
+    text-decoration: none !important;
+}
+
+/* Text colors */
+.login-signup-modal .text-warning {
+    color: #ffc107 !important;
+}
+
+/* Alert styling */
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .login-signup-modal .modal-body {
+        padding: 1.5rem;
+    }
+    
+    .login-signup-modal .modal-header {
+        padding: 1rem;
+    }
+}

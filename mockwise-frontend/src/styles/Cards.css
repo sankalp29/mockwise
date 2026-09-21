@@ -1,0 +1,77 @@
+.interview-type-card {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+  
+  /* Glow border */
+.interview-type-card::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from 0deg,
+    #ff0057,
+    #ff7c00,
+    #fcd500,
+    #00ff85,
+    #00cfff,
+    #4b00ff,
+    #ff0057
+  );
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  filter: blur(16px);
+  pointer-events: none;
+
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+  padding: 6px;
+}
+
+/* Optional strong inner glow (visible even more clearly) */
+.interview-type-card:hover {
+  transform: scale(1.05) translateY(-8px);
+}
+
+/* Make glow visible on hover */
+.interview-type-card:hover::before {
+  opacity: 1;
+}
+
+.interview-type-modal .modal-dialog {
+  max-width: 600px;  /* Customize modal width */
+  margin: auto;
+}
+
+.interview-type-modal .modal-content {
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.coming-soon-text {
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+  font-size: 0.85rem;
+  color: rgba(0, 0, 0, 0.633);
+  font-style: italic;
+  pointer-events: none;
+}
+
+.disabled-card {
+  cursor: default;
+}
+
+.clickable-card {
+  cursor: pointer;
+}

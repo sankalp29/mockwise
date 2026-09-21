@@ -1,0 +1,90 @@
+/* ——— Shared (both views) ——— */
+
+.company-logos-heading {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  padding-top: 4rem;
+  margin-bottom: 2rem;
+}
+
+.company-logos .company-logo-container {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.company-logos .logo-img {
+  display: block;
+  object-fit: contain;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* ——— Desktop / laptop (≥ 768px) ———
+   Full-width single row: logos share space equally, never wrap.
+   Minimum gap grows on wider screens (up to ~50px). */
+
+.company-logos--desktop .company-logo-container {
+  justify-content: center;
+  gap: clamp(0.5rem, 2.8vw, 3.125rem);
+  max-width: 1100px;
+  margin-inline: auto;
+  padding: 0 clamp(0.75rem, 3vw, 1.5rem) 5rem;
+}
+
+.company-logos--desktop .logo-item {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.company-logos--desktop .logo-img {
+  width: 100%;
+  height: auto;
+  max-height: clamp(2rem, 4vw, 3.75rem); /* ~32px → 60px */
+}
+
+/* ——— Mobile (≤ 767px) ———
+   Single horizontal strip with a fixed min gap; scroll sideways if needed
+   so logos stay readable instead of shrinking to unreadable sizes. */
+
+.company-logos--mobile .company-logos-heading {
+  font-size: 1.2rem;
+  padding-top: 2.5rem;
+  margin-bottom: 1.25rem;
+  padding-inline: 1rem;
+}
+
+.company-logos--mobile .company-logo-container {
+  justify-content: flex-start;
+  /* Hard minimum spacing between consecutive logos */
+  gap: 1rem;
+  padding: 0 1rem 3rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  overscroll-behavior-x: contain;
+}
+
+.company-logos--mobile .company-logo-container::-webkit-scrollbar {
+  display: none; /* Chrome / Safari */
+}
+
+.company-logos--mobile .logo-item {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.company-logos--mobile .logo-img {
+  width: auto;
+  height: 2.25rem; /* 36px — readable on small screens */
+  max-width: 4.5rem;
+}

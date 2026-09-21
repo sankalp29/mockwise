@@ -1,0 +1,78 @@
+.nav-hover-pill {
+  position: relative;
+  padding: 0.3rem 0.75rem;
+  font-weight: bold;
+  border-radius: 50rem;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  color: white; /* Ensure default text color is white */
+}
+
+.nav-hover-pill:hover {
+  background-color: white;
+  text-emphasis-color: #000000;
+  color: black;
+}
+
+/*
+ * Open Explore Interview Types on hover (desktop) via CSS only.
+ * Do not use :focus-within: focus can remain on the toggle after a click and
+ * the menu would stick open without hover.
+ *
+ * Bootstrap adds .dropdown-menu.show on click/focus. On desktop we MUST hide
+ * the menu when the pointer leaves — otherwise .show keeps it visible after
+ * hover-away. Mobile (< lg) keeps click/.show behavior (no hover).
+ *
+ * Menu sits flush under the toggle (no gap) so the pointer never leaves the
+ * dropdown root while moving onto items.
+ */
+.explore-interview-dropdown .dropdown-menu,
+.explore-interview-dropdown .dropdown-menu.show {
+  position: absolute !important;
+  inset: auto !important;
+  top: 100% !important;
+  left: 0 !important;
+  transform: none !important;
+  margin-top: 0 !important; /* flush — no dead zone between toggle and menu */
+  min-width: 300px;
+  width: auto;
+  max-height: none;
+  padding: 0.5rem 0;
+  background-color: transparent !important;
+  overflow: visible;
+}
+
+/* Desktop (lg+): show only while hovering the dropdown root; ignore sticky .show */
+@media (min-width: 992px) {
+  .explore-interview-dropdown.dropdown:hover > .dropdown-menu,
+  .explore-interview-dropdown.dropdown:hover .dropdown-menu {
+    display: block !important;
+  }
+
+  .explore-interview-dropdown.dropdown:not(:hover) > .dropdown-menu,
+  .explore-interview-dropdown.dropdown:not(:hover) .dropdown-menu {
+    display: none !important;
+  }
+}
+
+/* Mobile / collapsed navbar: Bootstrap click + .show */
+@media (max-width: 991.98px) {
+  .explore-interview-dropdown.dropdown .dropdown-menu.show {
+    display: block;
+  }
+}
+
+.dropdown-menu {
+  min-width: 300px;
+  background-color: transparent !important;
+}
+.dropdown-item {
+  white-space: normal;
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  padding: 15px 15px;
+}
+.dropdown-item:hover {
+  background-color: #198754 !important;
+  color: #ffffff !important;
+}
+  

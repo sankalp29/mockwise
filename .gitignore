@@ -1,0 +1,23 @@
+.DS_Store
+**/.DS_Store
+.idea/
+.vscode/
+*.iml
+*.log
+
+# Frontend
+node_modules/
+dist/
+dist-ssr/
+.env
+.env.*
+!.env.example
+
+# Backend
+target/
+build/
+logs/
+.quality/
+.tmp-db-copy/
+**/src/main/resources/application-local-secrets.yml
+**/src/main/resources/application.properties

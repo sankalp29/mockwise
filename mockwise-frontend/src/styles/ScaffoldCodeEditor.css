@@ -1,0 +1,19 @@
+.scaffold-editor {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* Readonly scaffold lines — subtle, not loud */
+.scaffold-readonly-line {
+  background: rgba(128, 128, 128, 0.08) !important;
+}
+
+.scaffold-dark .scaffold-readonly-line {
+  background: rgba(255, 255, 255, 0.04) !important;
+}
+
+.scaffold-readonly-inline {
+  opacity: 0.72;
+}

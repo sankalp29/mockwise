@@ -1,0 +1,118 @@
+/* Testimonial Section Styling */
+
+.testimonial-card {
+  background-color: #ffffff; /* White background for cards */
+  color: hsl(0, 0%, 0%); /* Black text for card content */
+  border: 5px solid transparent; /* Keep a transparent border */
+  background-image: linear-gradient(#ffffff, #ffffff); /* Inner background and gradient border */
+  background-origin: padding-box, border-box; /* Set origin for both backgrounds */
+  background-clip: padding-box, border-box; /* Clip the backgrounds */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px; /* Explicitly set width to prevent overlap */
+  height: 100%; /* stretch with parent */
+  min-height: 420px; /* consistent minimum height */
+  /* min-width: 400px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  text-align: center; /* Center text within card */
+}
+
+/* Removed specific styles for .absolute, .h-14, .w-12, .bg-neutral-600, .object-cover, .object-top, .mb-4 */
+
+.testimonial-image {
+  width: 80px; /* Adjust size as needed */
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%; /* Make image round */
+  margin: 0 auto 1rem auto; /* Center image and add bottom margin */
+  border: 2px solid #198754; /* Border color for image */
+}
+
+.testimonial-quote {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #000000; /* Black text for quote */
+  margin-bottom: 1rem;
+  overflow: hidden; /* prevent overflow differences */
+}
+
+.testimonial-author {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #198754; /* Green color for author name */
+  margin-top: auto; /* Push author to bottom */
+  font-style: normal; /* Removed italic */
+}
+
+/* Carousel Arrows Styling */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.5rem;
+  color: #ffffff; /* Green color for arrows */
+  cursor: pointer;
+  z-index: 10; /* Ensure arrows are above cards */
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  padding: 0.5rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+}
+
+.carousel-arrow-left {
+  left: -5%; /* Position arrows completely outside the cards */
+}
+
+.carousel-arrow-right {
+  right: -5%; /* Position arrows completely outside the cards */
+}
+
+
+/* Add or update your CSS file */
+
+.carousel-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+/* Simple slide animations for the visible row */
+.carousel-animated {
+  will-change: transform, opacity;
+}
+
+@keyframes slideLeft {
+  from { transform: translateX(30px); opacity: 0.01; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideRight {
+  from { transform: translateX(-30px); opacity: 0.01; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.slide-left {
+  animation: slideLeft 750ms ease-in-out;
+}
+
+.slide-right {
+  animation: slideRight 750ms ease-in-out;
+}
+
+.carousel-card-wrapper {
+  flex-shrink: 0;
+  padding: 0 10px; 
+}

@@ -1,0 +1,35 @@
+/* FAQ Section Styling */
+.accordion-item {
+  background-color: transparent !important;
+  border: none !important;
+  margin-bottom: 1rem;
+}
+
+.accordion-button {
+  /*Dark background for accordion headers */
+  /* background-color: #1a1a1a !important; */
+  background-color: #ffffff;
+  color: #000000 !important; /* White text for accordion headers */
+  border-radius: 0.5rem !important;
+  font-weight: bold;
+  padding: 1rem 1.25rem;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #198754 !important; /* Slightly darker when open */
+  color: white !important;
+  box-shadow: none !important;
+}
+
+.accordion-body {
+  background-color: #ffffff;
+  color: #000000 !important; /* Black text for accordion body */
+  border-top: none !important;
+  border-radius: 0 0 0.5rem 0.5rem;
+  padding: 1rem 1.25rem;
+}
+
+.accordion-button:focus {
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
