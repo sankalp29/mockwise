@@ -31,7 +31,7 @@ function FAQSection() {
             <Accordion.Item eventKey="2">
               <Accordion.Header>What interview types does MockWise currently support?</Accordion.Header>
               <Accordion.Body>
-                Right now, MockWise supports coding interview simulations. System design and behavioral rounds will be added in upcoming phases.
+                Right now, MockWise supports coding interview simulations. Behavioral rounds will be added in upcoming phases.
               </Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey="3">

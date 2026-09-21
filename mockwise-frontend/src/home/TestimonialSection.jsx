@@ -53,7 +53,7 @@ function TestimonialSection() {
     },
     {
       id: 8,
-      quote: "8. The 'Coming Soon' features for System Design and Behavioral interviews are exciting. Can't wait to try them!",
+      quote: "8. The structured feedback after each mock is the closest I've felt to a real coding interview debrief.",
       author: "- Carol White, Engineering Manager at Apple",
       image: "/public/coding-interview-steps-logos/code-submit-get-schooled-colorful.png"
     },

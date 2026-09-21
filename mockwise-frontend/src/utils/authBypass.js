@@ -20,7 +20,8 @@ if (blockedInProd) {
   );
 }
 
-export const AUTH_BYPASS = bypass;
+// Login is disabled for now. Restore with: export const AUTH_BYPASS = bypass;
+export const AUTH_BYPASS = true;
 
 /** Placeholder token accepted by the backend when mockwise.auth.disabled=true. */
 export const BYPASS_ACCESS_TOKEN = 'auth-disabled';

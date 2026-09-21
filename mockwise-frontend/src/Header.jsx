@@ -117,10 +117,6 @@ function Header({ showToast }) {
               <NavDropdown.Item onClick={(e) => handleNavLinkClick(e, "/home#coding-interview-flow", "coding-interview-flow")}>
                 <div className="fw-bold">Coding</div>
               </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/practice/system-design">
-                <div className="fw-bold">System Design</div>
-                <span className="badge bg-success ms-2">Free</span>
-              </NavDropdown.Item>
               <NavDropdown.Item className="d-flex justify-content-between align-items-center" disabled>
                 <div className="fw-bold">Behavioral</div>
                 <span className="badge bg-secondary ms-2">...coming soon</span>

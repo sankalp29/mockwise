@@ -24,9 +24,6 @@ export default defineConfig({
           if (id.includes('monaco-editor') || id.includes('@monaco-editor')) {
             return 'vendor-monaco'
           }
-          if (id.includes('@excalidraw') || id.includes('excalidraw')) {
-            return 'vendor-excalidraw'
-          }
           return undefined
         },
       },

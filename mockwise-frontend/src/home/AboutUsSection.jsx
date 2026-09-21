@@ -8,7 +8,7 @@ function AboutUsSection() {
           <h1 className="fw-bold mb-4 text-center" style={{ color: 'white' }}>about_us = &#123; &quot;differentiator&quot;: &quot;..&quot;, &quot;vision&quot;: &quot;..&quot; &#125;</h1>
 
           <p className="lead mb-4" style={{ color: 'white', textAlign: 'left' }}>
-            <span className="mockwise-gradient">Mockwise</span> is a real interview simulator built to mirror the full spectrum of technical interviews — coding, system design, and behavioral. It’s where preparation meets pressure, combining curated questions, strict time limits, and structured feedback to recreate the intensity of an actual interview room.
+            <span className="mockwise-gradient">Mockwise</span> is a real interview simulator built for coding interviews. It’s where preparation meets pressure, combining curated questions, strict time limits, and structured feedback to recreate the intensity of an actual interview room.
           </p>
 
           <p className="lead mb-4" style={{ color: 'white', textAlign: 'left' }}>
@@ -30,7 +30,7 @@ function AboutUsSection() {
           </p>
 
           <p className="lead mb-4" style={{ color: 'white', textAlign: 'left' }}>
-            This is only phase one. Next, we’re bringing the same realism and depth of feedback to system design and behavioral interviews — so you can prepare for every round of the technical interview process in one place.
+            This is only phase one. Next, we’re bringing the same realism and depth of feedback to behavioral interviews — so you can prepare for more of the technical interview process in one place.
           </p>
         </Col>
       </Row>

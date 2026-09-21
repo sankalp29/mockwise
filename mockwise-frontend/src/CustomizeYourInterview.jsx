@@ -1,25 +1,19 @@
 import { useEffect, useState } from 'react';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { Row, Col, Button, Card } from 'react-bootstrap';
-import { pickSystemDesignQuestions } from './system-design/systemDesignQuestions';
 import './styles/CustomizeYourInterview.css';
 
 /** Path segment under /practice/:interviewType */
 export const PRACTICE_TYPES = {
   coding: 'coding',
-  systemDesign: 'system-design',
 };
 
 const INTERVIEW_TYPES = [
   { id: PRACTICE_TYPES.coding, label: 'Coding' },
-  { id: PRACTICE_TYPES.systemDesign, label: 'System Design', badge: 'Free' },
   { id: 'behavioral', label: 'Behavioral', badge: 'Soon', disabled: true },
 ];
 
-const ACTIVE_PRACTICE_TYPES = new Set([
-  PRACTICE_TYPES.coding,
-  PRACTICE_TYPES.systemDesign,
-]);
+const ACTIVE_PRACTICE_TYPES = new Set([PRACTICE_TYPES.coding]);
 
 const options = {
   difficulty: ['Easy', 'Medium', 'Hard'],
@@ -68,14 +62,11 @@ function CustomizeYourInterview() {
   const [interviewType, setInterviewType] = useState(
     () => pathType || PRACTICE_TYPES.coding
   );
-  const isSystemDesign = interviewType === PRACTICE_TYPES.systemDesign;
 
   const [difficulty, setDifficulty] = useState('Medium');
   const [questions, setQuestions] = useState('2 Questions');
   const [time, setTime] = useState('45 Minutes');
-  const [startError, setStartError] = useState('');
 
-  // Sync when Header / in-app links change /practice/coding|system-design
   useEffect(() => {
     if (pathType) setInterviewType(pathType);
   }, [pathType]);
@@ -89,39 +80,12 @@ function CustomizeYourInterview() {
     if (typeId === interviewType || !ACTIVE_PRACTICE_TYPES.has(typeId)) return;
     // Update UI immediately — path update follows for a consistent URL format
     setInterviewType(typeId);
-    setStartError('');
     navigate(`/practice/${typeId}`, { replace: true });
   };
 
   const handleStartInterview = () => {
     const numQuestions = parseInt(questions, 10) || 1;
     const timeMinutes = parseInt(time, 10) || 45;
-    setStartError('');
-
-    if (isSystemDesign) {
-      const assigned = pickSystemDesignQuestions(difficulty, numQuestions);
-      if (assigned.length === 0) {
-        setStartError(
-          `No system design questions are available for ${difficulty} yet. Try another difficulty.`
-        );
-        return;
-      }
-      try {
-        sessionStorage.removeItem('sd_session_timer_v2');
-      } catch {
-        /* ignore */
-      }
-      navigate('/system-design/session', {
-        state: {
-          durationMinutes: timeMinutes,
-          difficulty,
-          questionIds: assigned.map((q) => q.id),
-          startedAt: Date.now(),
-          freeAccess: true,
-        },
-      });
-      return;
-    }
 
     const startToken =
       typeof crypto !== 'undefined' && crypto.randomUUID
@@ -178,10 +142,7 @@ function CustomizeYourInterview() {
             label="Difficulty Level"
             options={options.difficulty}
             selected={difficulty}
-            onSelect={(value) => {
-              setDifficulty(value);
-              setStartError('');
-            }}
+            onSelect={setDifficulty}
           />
           <SelectionGroup
             label="Number of Questions"
@@ -197,11 +158,6 @@ function CustomizeYourInterview() {
           />
 
           <div className="text-center">
-            {startError ? (
-              <p className="text-warning mb-2" role="alert">
-                {startError}
-              </p>
-            ) : null}
             <Button
               variant="success"
               size="md"

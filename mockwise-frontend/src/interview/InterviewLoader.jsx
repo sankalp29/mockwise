@@ -5,6 +5,7 @@ import { SupabaseAuthContext } from '../SupabaseAuthContext';
 import { useApiOnce } from '../hooks/useApiOnce';
 import { buildApiUrl, API_ENDPOINTS } from '../utils/api';
 import { logger } from '../utils/logger';
+import { AUTH_BYPASS } from '../utils/authBypass';
 import '../styles/InterviewLoader.css';
 
 /**
@@ -15,11 +16,12 @@ function getInterviewLoadErrorCopy(rawError, isRecovery) {
   const lower = message.toLowerCase();
 
   if (
-    lower.includes('not authenticated') ||
-    lower.includes('user not authenticated') ||
-    lower.includes('jwt') ||
-    lower.includes('unauthorized') ||
-    lower === 'request failed with status code 401'
+    !AUTH_BYPASS &&
+    (lower.includes('not authenticated') ||
+      lower.includes('user not authenticated') ||
+      lower.includes('jwt') ||
+      lower.includes('unauthorized') ||
+      lower === 'request failed with status code 401')
   ) {
     return {
       title: 'Sign in to continue',
@@ -74,7 +76,7 @@ function getInterviewLoadErrorCopy(rawError, isRecovery) {
     };
   }
 
-  if (lower.includes('do not have access') || lower.includes('403') || lower.includes('forbidden')) {
+  if (!AUTH_BYPASS && (lower.includes('do not have access') || lower.includes('403') || lower.includes('forbidden'))) {
     return {
       title: 'Access unavailable',
       body: 'This interview belongs to another account, or your session no longer has permission to open it.',
@@ -285,7 +287,7 @@ function InterviewLoader() {
       }
       
       // Primary guard: ensure user is authenticated
-      if (!user) {
+      if (!AUTH_BYPASS && !user) {
         logger.log('❌ No user, returning');
         return;
       }
@@ -370,13 +372,13 @@ function InterviewLoader() {
           setLoading(true);
 
           const accessToken = await getAccessToken();
-          if (!accessToken) {
+          if (!AUTH_BYPASS && !accessToken) {
             throw new Error('User not authenticated');
           }
 
           const headers = {
-            'Authorization': `Bearer ${accessToken}`,
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            ...(accessToken ? { Authorization: `Bearer ${accessToken}` } : {}),
           };
           
           const requestData = {
@@ -451,13 +453,13 @@ function InterviewLoader() {
           setLoading(true); 
           
           const accessToken = await getAccessToken();
-          if (!accessToken) {
+          if (!AUTH_BYPASS && !accessToken) {
             throw new Error('User not authenticated');
           }
 
           const headers = {
-            'Authorization': `Bearer ${accessToken}`,
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            ...(accessToken ? { Authorization: `Bearer ${accessToken}` } : {}),
           };
           const result = await recoverInterviewApi.makeRequest({
             method: 'get',
